@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 
 def calculate_network_info(previous_broadcast, group_size):
-    new_mask = 32 - (group_size.bit_length())
+    new_mask = 32 - ((group_size+1).bit_length())
     adress_available = 2**(32 - new_mask)
     network = ipaddress.IPv4Network((previous_broadcast + 1, new_mask), strict=False)
     network_address = network.network_address
