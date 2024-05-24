@@ -37,6 +37,7 @@ def display_results():
     base_network_ip = entry_base_network_ip.get()
     base_network_mask = int(entry_base_network_mask.get())
     list_of_groups = [int(x) for x in entry_list_of_groups.get().split(',')]
+    list_of_groups.sort(reverse=True)
 
     previous_broadcast = ipaddress.IPv4Address(base_network_ip) - 1
     result_text.delete(1.0, tk.END)  # Clear previous results
