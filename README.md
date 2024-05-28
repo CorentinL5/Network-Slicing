@@ -1,12 +1,13 @@
 # Projet de Calcul du Découpage de Réseau
 
-Bienvenue dans notre projet de calcul du découpage de réseau ! Ce dépôt propose une implémentation du calculateur dans plusieurs langages de programmation.
+Bienvenue sur le projet de calcul de découpage de réseau ! Ce dépôt propose une implémentation du calculateur dans plusieurs langages de programmation.
 
 ---
 
 ## Langages Supportés
 
 - [Python](#python) - Utilisation du fichier slicing_calculator.py.
+- [Javascript](#javascript) - Utilisation du fichier slicing_calculator.py.
 
 ## Utilisation
 
@@ -17,6 +18,9 @@ Bienvenue dans notre projet de calcul du découpage de réseau ! Ce dépôt prop
 2. Installez les dépendances : `pip install -r python/requirements.txt`.
 3. Exécutez le calculateur : `python python/slicing_calculator.py`.
 
+## Javascript
+- [Lien vers le Dossier](/Javascript)
+1. Lancez le `index.html` dans votre navigateur préféré.
 
 ## Contribution
 
