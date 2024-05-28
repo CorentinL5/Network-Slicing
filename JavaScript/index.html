@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Calculator</title>
+</head>
+<body>
+    <h1>Network Calculator</h1>
+    <form id="networkForm">
+        <label for="entryBaseNetworkIP">Base Network IP:</label>
+        <input type="text" id="entryBaseNetworkIP" required>
+        <br>
+        <label for="entryBaseNetworkMask">Base Network Mask:</label>
+        <input type="number" id="entryBaseNetworkMask" min="0" max="32" required>
+        <br>
+        <label for="entryListOfGroups">List of Groups (comma-separated):</label>
+        <input type="text" id="entryListOfGroups" required>
+        <br>
+        <button type="button" onclick="displayResults()">Calculate</button>
+    </form>
+    <textarea id="resultText" rows="20" cols="80" readonly></textarea>
+
+    <script src="network_calculator.js"></script>
+</body>
+</html>
