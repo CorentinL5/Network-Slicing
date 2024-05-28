@@ -19,7 +19,7 @@ Bienvenue sur le projet de calcul de découpage de réseau ! Ce dépôt propose 
 3. Exécutez le calculateur : `python python/slicing_calculator.py`.
 
 ## Javascript
-- [Lien vers le Dossier](/Javascript)
+- [Lien vers le Dossier](/JavaScript)
 1. Lancez le `index.html` dans votre navigateur préféré.
 
 ## Contribution
