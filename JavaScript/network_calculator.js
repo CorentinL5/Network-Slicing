@@ -1,12 +1,12 @@
-function ipToInt(ip) {
+function ipToInt(ip : string) : number {
     return ip.split('.').reduce((int, octet) => (int << 8) + parseInt(octet, 10), 0) >>> 0;
 }
 
-function intToIp(int) {
+function intToIp(int : number) : string {
     return `${(int >>> 24)}.${(int >> 16 & 255)}.${(int >> 8 & 255)}.${(int & 255)}`;
 }
 
-function calculateNetworkInfo(previousBroadcast, groupSize) {
+function calculateNetworkInfo(previousBroadcast : number, groupSize : number) : [string, string, string, number, number] {
     const newMask = 32 - Math.ceil(Math.log2(groupSize + 2));
     const addressAvailable = Math.pow(2, 32 - newMask);
     const networkAddressInt = previousBroadcast + 1;
@@ -18,13 +18,13 @@ function calculateNetworkInfo(previousBroadcast, groupSize) {
     return [networkAddress, broadcastAddress, addressRange, addressAvailable, newMask];
 }
 
-function isNetworkAddress(ip, mask) {
+function isNetworkAddress(ip : undefined, mask : number) : boolean {
     const ipInt = ipToInt(ip);
     const maskInt = ~((1 << (32 - mask)) - 1);
     return (ipInt % maskInt) === 0;
 }
 
-function validateInputs() {
+function validateInputs() : boolean | undefined {
     try {
         const baseNetworkIP = document.getElementById('entryBaseNetworkIP').value;
         const baseNetworkMask = parseInt(document.getElementById('entryBaseNetworkMask').value);
@@ -47,7 +47,7 @@ function validateInputs() {
     }
 }
 
-function displayResults() {
+function displayResults() : void {
     if (!validateInputs()) {
         return;
     }
