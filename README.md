@@ -6,8 +6,8 @@ Bienvenue sur le projet de calcul de découpage de réseau ! Ce dépôt propose 
 
 ## Langages Supportés
 
-- [<img src="https://corentinl5.github.io/CorentinL5/assets/skills/python.svg" alt="JS" height="20"> Python](Python/README.md)
-- [<img src="https://corentinl5.github.io/CorentinL5/assets/skills/javascript.svg" alt="JS" height="20"> JavaScript](JavaScript/README.md)
+- [<img src="https://corentinl5.github.io/CorentinL5/assets/skills/python.svg" alt="JS" height="20"> Python](Python)
+- [<img src="https://corentinl5.github.io/CorentinL5/assets/skills/javascript.svg" alt="JS" height="20"> JavaScript](JavaScript)
 
 ## Contribution
 
