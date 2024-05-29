@@ -6,6 +6,15 @@ function intToIp(int) {
     return `${(int >>> 24)}.${(int >> 16 & 255)}.${(int >> 8 & 255)}.${(int & 255)}`;
 }
 
+function maskToBinary(mask) {
+    return '1'.repeat(mask) + '0'.repeat(32 - mask);
+}
+
+function maskToIp(mask) {
+    return intToIp(parseInt(maskToBinary(mask), 2));
+}
+
+
 function calculateNetworkInfo(previousBroadcast, groupSize){
     const newMask = 32 - Math.ceil(Math.log2(groupSize + 2));
     const addressAvailable = Math.pow(2, 32 - newMask);
@@ -29,6 +38,7 @@ function validateInputs() {
         const baseNetworkIP = document.getElementById('entryBaseNetworkIP').value;
         const baseNetworkMask = parseInt(document.getElementById('entryBaseNetworkMask').value);
         const listOfGroups = document.getElementById('entryListOfGroups').value.split(',').map(x => parseInt(x));
+
 
         if (!/^(\d{1,3}\.){3}\d{1,3}$/.test(baseNetworkIP)) {
             new Error('Invalid IP address format.');
@@ -56,6 +66,10 @@ function displayResults()  {
     const baseNetworkMask = parseInt(document.getElementById('entryBaseNetworkMask').value);
     const listOfGroups = document.getElementById('entryListOfGroups').value.split(',').map(x => parseInt(x)).sort((a, b) => b - a);
 
+    // Options for the base network IP
+    const showMaskIp = document.getElementById('showMaskIp').checked;
+    const showMaskBinary = document.getElementById('showMaskBinary').checked;
+
     let previousBroadcast;
     if (isNetworkAddress(baseNetworkIP, baseNetworkMask)) {
         previousBroadcast = ipToInt(baseNetworkIP) - 1;
@@ -74,7 +88,13 @@ function displayResults()  {
         resultText.value += `Network Address: ${networkAddress}\n`;
         resultText.value += `Broadcast Address: ${broadcastAddress}\n`;
         resultText.value += `Address Range: ${addressRange}\n`;
-        resultText.value += `Subnet Mask: /${subnetMask}\n`;
+        resultText.value += `Subnet Mask, : /${subnetMask}\n`;
+        if (showMaskIp) {
+            resultText.value += `Subnet Mask, IP: ${maskToIp(subnetMask)}\n`;
+        }
+        if (showMaskBinary) {
+            resultText.value += `Subnet Mask, Binary: ${maskToBinary(subnetMask)}\n`;
+        }
         resultText.value += `Number of Addresses, Theoretical: ${addressAvailable}, Available: ${addressAvailable - 2}\n\n`;
     }
     resultText.rows = resultText.value.split('\n').length;
