@@ -21,7 +21,7 @@ function calculateNetworkInfo(previousBroadcast, groupSize) {
 function isNetworkAddress(ip, mask) {
     const ipInt = ipToInt(ip);
     const maskInt = ~((1 << (32 - mask)) - 1);
-    return (ipInt & maskInt) === ipInt;
+    return (ipInt % maskInt) === 0;
 }
 
 function validateInputs() {
@@ -62,7 +62,7 @@ function displayResults() {
     } else {
         previousBroadcast = ipToInt(baseNetworkIP) + Math.pow(2, 32 - baseNetworkMask) - 1;
     }
-    
+
     const resultText = document.getElementById('resultText');
     resultText.value = ''; // Clear previous results
 
