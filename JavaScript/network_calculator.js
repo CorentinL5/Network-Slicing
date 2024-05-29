@@ -31,13 +31,13 @@ function validateInputs() {
         const listOfGroups = document.getElementById('entryListOfGroups').value.split(',').map(x => parseInt(x));
 
         if (!/^(\d{1,3}\.){3}\d{1,3}$/.test(baseNetworkIP)) {
-            throw new Error('Invalid IP address format.');
+            new Error('Invalid IP address format.');
         }
         if (!(0 <= baseNetworkMask && baseNetworkMask <= 32)) {
-            throw new Error('The subnet mask must be between 0 and 32 inclusive.');
+            new Error('The subnet mask must be between 0 and 32 inclusive.');
         }
         if (!listOfGroups.every(groupSize => Number.isInteger(groupSize) && groupSize > 0)) {
-            throw new Error('Group sizes must be positive integers.');
+            new Error('Group sizes must be positive integers.');
         }
 
         return true;
@@ -77,4 +77,7 @@ function displayResults() {
         resultText.value += `Subnet Mask: /${subnetMask}\n`;
         resultText.value += `Number of Addresses, Theoretical: ${addressAvailable}, Available: ${addressAvailable - 2}\n\n`;
     }
+    resultText.rows = resultText.value.split('\n').length;
+    //show the result:
+    resultText.style.display = 'block';
 }
