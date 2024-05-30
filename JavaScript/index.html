@@ -7,32 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Network Calculator</h1>
-    <form id="networkForm">
-        <label for="entryBaseNetworkIP">Base Network IP:</label>
-        <input type="text" id="entryBaseNetworkIP" required>
-        <br>
-        <label for="entryBaseNetworkMask">Base Network Mask (CIDR):</label>
-        <input type="number" id="entryBaseNetworkMask" min="0" max="32" required>
-        <br>
-        <label for="entryListOfGroups">List of Groups (comma-separated):</label>
-        <input type="text" id="entryListOfGroups" required>
-        <br>
-        <h3>Options</h3>
-        <label for="showMaskIp">
-            <input type="checkbox" id="showMaskIp">
-            Show Mask IP
-        </label>
-        <label for="showMaskBinary">
-            <input type="checkbox" id="showMaskBinary">
-            Show Mask Binary
-        </label>
+    <header>
+        <h1>Network Calculator</h1>
+        <div>
+            <p>L'utilisation de ce site est à vos propres risques.</p>
+            <p>L'auteur ne peut être tenu responsable de tout dommage direct ou indirect résultant de l'utilisation de ce <a href="https://github.com/CorentinL5/Network-Slicing" >projet</a>.</p>
+        </div>
+    </header>
+    <main>
+        <form id="networkForm">
+            <label for="entryBaseNetworkIP">Base Network IP:</label>
+            <input type="text" id="entryBaseNetworkIP" required>
+            <br>
+            <label for="entryBaseNetworkMask">Base Network Mask (CIDR):</label>
+            <input type="number" id="entryBaseNetworkMask" min="0" max="32" required>
+            <br>
+            <label for="entryListOfGroups">List of Groups (comma-separated):</label>
+            <input type="text" id="entryListOfGroups" required>
+            <br>
+            <h3>Options</h3>
+            <label for="showMaskIp">
+                <input type="checkbox" id="showMaskIp">
+                Show Mask IP
+            </label>
+            <label for="showMaskBinary">
+                <input type="checkbox" id="showMaskBinary">
+                Show Mask Binary
+            </label>
 
 
-        <button type="button" onclick="displayResults()">Calculate</button>
-    </form>
-    <label for="resultText"></label><textarea id="resultText" rows="0" cols="60" readonly></textarea>
+            <button type="button" onclick="displayResults()">Calculate</button>
+        </form>
+        <label for="resultText"></label><textarea id="resultText" rows="0" cols="60" readonly></textarea>
 
-    <script src="network_calculator.js"></script>
+        <script src="network_calculator.js"></script>
+    </main>
+    <footer>
+        <p>Made with ❤️ by this <a href="https://github.com/CorentinL5/">guy</a></p>
+    </footer>
 </body>
 </html>

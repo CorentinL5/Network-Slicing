@@ -7,19 +7,63 @@ body {
     flex-direction: column;
     align-items: center;
 }
+header {
+    text-align: center;
+    min-width: 300px;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+        font-size: 0.75em;
+        border-radius: 15px;
+        color: #555555;
+        border-top: 2px solid #eaeaea;
+        box-shadow: 0 0 10px 2.5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        background-color: #f1f1f1;
+        width: 90%;
+    }
+    a {
+        color: #007BFF;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    p {
+        margin: 0;
+        line-height: 1.6;
+    }
+}
 
 h1 {
     text-align: center;
     color: #333;
 }
 
+/* Main reset */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10em;
+}
+
 form {
     background-color: #fff;
     padding: 20px;
+    margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    margin: 0 auto;
 }
 
 label {
@@ -27,6 +71,9 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
+}
+label:hover {
+    color: #333;
 }
 
 input[type="text"],
@@ -60,10 +107,32 @@ button:hover {
     width: 75%;
     min-width: 300px;
     padding: 10px;
-    margin-top: 20px;
+    margin: 0 5em;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
     font-family: monospace;
     resize: none;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+
+    a {
+        color: #FF4500;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
 }
